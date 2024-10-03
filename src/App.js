@@ -38,6 +38,7 @@ export default function App() {
                 <th>Email</th>
                 <th>Role</th>
             </tr>
+            <tbody>
             {
                 employeeData.slice(pg*10, pg*10 + 10).map((employee) => (
                     <tr key={employee.id}>
@@ -48,6 +49,7 @@ export default function App() {
                     </tr>
                 ))
             }
+            </tbody>
         </table>
         <Pagination pageno={pg} handleNextPage={handleNextPage} handlePreviousPage={handlePreviousPage}/>
     </div>
