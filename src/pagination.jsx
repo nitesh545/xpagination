@@ -1,18 +1,11 @@
 import React from 'react';
 
-const Pagination = ({ postsPerPage, length}) => {
-    const paginationNumbers = [];
-
-    for (let i = 1; i <= Math.ceil(length / postsPerPage); i++) {
-        paginationNumbers.push(i);
-    }
-
+export default function Pagination({pageno, handleNextPage, handlePreviousPage}){
     return (
-        <div className='pagination'>
-            {paginationNumbers.map((pageNumber) => (
-                <button key={pageNumber}>{pageNumber}</button>
-            ))}
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <button onClick={handlePreviousPage}>Previous</button>
+            <h5 style={{padding: '5rem'}}>{pageno + 1}</h5>
+            <button onClick={handleNextPage}>Next</button>
         </div>
-    );
+    )
 };
-export default Pagination;
